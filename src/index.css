@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #3b82f6;
+  --color-success: #52c95a;
+  --color-bg-dark: var(--bg-primary);
+  --color-bg-card: var(--bg-secondary);
+  --color-text-main: var(--text-primary);
+  --color-text-dim: var(--text-secondary);
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", monospace;
+  --font-sans: "IBM Plex Sans", "Inter", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  :root.dark {
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  body {
+    @apply bg-bg-dark text-text-dim font-sans selection:bg-accent/30 transition-colors duration-300;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply text-text-main font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .bg-jinesh-grid {
+    background-image: 
+      linear-gradient(90deg, var(--grid-color, rgba(0,0,0,0.05)) 1px, transparent 0px), 
+      linear-gradient(var(--grid-color, rgba(0,0,0,0.05)) 1px, transparent 0px);
+    background-size: 14px 24px;
+  }
+
+  .dark .bg-jinesh-grid {
+    --grid-color: rgba(211, 211, 211, 0.015);
+  }
+
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.05;
+    background-image: url('https://www.anantnavadiya.com/_next/static/media/effect.45d800fc.gif');
+  }
+
+  .window-shadow {
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.1);
+  }
+
+  .terminal-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    @apply bg-success ml-1 align-middle;
+    animation: blink 1s step-end infinite;
+  }
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full;
+}
+
+/* Lenis */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
