@@ -21,7 +21,7 @@ const Skills = () => {
           <WindowFrame title="About.md">
             <div className="flex flex-col md:flex-row gap-8 items-start">
               <div className="w-24 h-24 rounded-xl overflow-hidden border border-border-color shrink-0">
-                <img src="/profile.png" alt="Profile" className="w-full h-full object-cover" />
+                <img src="profile.png" alt="Profile" className="w-full h-full object-cover" />
               </div>
               <div className="space-y-6 text-gray-400 leading-relaxed font-sans">
               <p>

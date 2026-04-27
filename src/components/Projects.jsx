@@ -8,7 +8,7 @@ const ProjectCard = ({ project, index }) => (
     <div className="flex flex-col lg:flex-row gap-10 items-center">
       <div className="w-full lg:w-1/2 overflow-hidden rounded-lg aspect-video bg-bg-card border border-border-color relative">
         <img 
-          src={project.image} 
+          src={project.image.startsWith('/') ? project.image.substring(1) : project.image} 
           alt={project.title} 
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
         />
@@ -46,13 +46,13 @@ const Projects = () => {
   const projects = [
     {
       title: "FreshBasket Grocery",
-      image: "/grocery.png",
+      image: "grocery.png",
       description: "A premium, dark-themed grocery shopping experience with real-time inventory management and lightning-fast checkout.",
       tech: ["React", "Node.js", "MongoDB", "Redux"],
     },
     {
       title: "Nadiya's Jewelry Store",
-      image: "/jewelry.png",
+      image: "jewelry.png",
       description: "Luxury e-commerce platform for high-end jewelry, featuring high-resolution galleries and secure payment integration.",
       tech: ["Angular", "MongoDB", "Tailwind"],
     }

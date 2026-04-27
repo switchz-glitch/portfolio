@@ -67,7 +67,7 @@ const Hero = () => {
           <div className="w-64 h-80 bg-bg-card border border-border-color rounded-2xl overflow-hidden relative group">
             <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
             <img
-              src="/profile.png"
+              src="profile.png"
               alt="Jinesh"
               className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
             />
